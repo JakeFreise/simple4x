@@ -1,0 +1,146 @@
+.app-wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "map map summary player"
+    "map map summary chat"
+    "map map summary chat"
+    "map map summary chat"
+    "hand hand summary chat";
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  grid-template-rows: auto 2fr 2fr 2fr auto;
+  gap: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.phase-indicator {
+  grid-area: phase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+button {
+  padding: 6px 12px;
+  margin-right: 8px;
+  font-size: 14px;
+  background-color: #eee;
+  border: 1px solid #999;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button.active {
+  background-color: #bbdefb; /* light blue highlight */
+  border-color: #2196f3;
+  color: #0d47a1;
+}
+
+button:hover:not(:disabled) {
+  background-color: #ddd;
+}
+
+button:disabled {
+  background-color: #f4f4f4;
+  color: #999;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+.map-area {
+  grid-area: map;
+  background: #eef;
+  border: 1px solid #999;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.map-header {
+  flex-shrink: 0;
+}
+
+.map-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 120px; /* Adjust width as needed */
+  background: #ddeeff;
+  border-top: 1px solid #999;
+  font-style: italic;
+  padding: 8px;
+  z-index: 1;
+}
+
+.player-info {
+  grid-area: player;
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.order-summary {
+  grid-area: summary;
+  background: #f4f4f4;
+  border: 1px solid #aaa;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.chat-trade-panel {
+  grid-area: chat;
+  background: #e6f7f7;
+  border: 1px solid #a0d0d0;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.card-hand {
+  grid-area: hand;
+  background: #fff8dc;
+  border: 1px solid #cc9;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 4px;
+  background: white;
+  margin-bottom: 8px;
+  min-height: 0;
+}
+
+.card {
+  padding: 6px 12px;
+  border: 1px solid #aaa;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+
